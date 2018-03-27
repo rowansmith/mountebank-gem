@@ -19,7 +19,7 @@ module Mountebank
     def self.post(uri, data)
       connection.post do |req|
         req.url uri
-        req.body = data
+        req.body = data.merge(:recordRequests => true)
       end
     end
 
